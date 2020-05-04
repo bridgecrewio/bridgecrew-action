@@ -1,0 +1,40 @@
+name: 'Bridgecrew Github Action'
+author: 'Bridgecrew.io'
+description: 'Run Bridgecrew against infrastructure code, as a pre-packaged Github Action.'
+inputs:
+  api-key-variable:
+    description: 'Environment variable name of the Bridgecrew API key from Bridgecrew app'
+    required: false
+
+  directory:
+    description: 'Directory with infrastructure code to scan'
+    default: '.'
+    required: false
+
+  file:
+    description: 'IaC file to scan'
+    required: false
+
+  soft-fail:
+    description: 'Runs checks but suppresses error code'
+    default: false
+    required: false
+
+  output:
+    description: 'Runs checks but suppresses error code'
+    default: 'cli'
+    required: false
+
+branding:
+  icon: 'shield'
+  color: 'purple'
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.api-key-variable }}
+    - ${{ inputs.directory }}
+    - ${{ inputs.file }}
+    - ${{ inputs.soft-fail }}
+    - ${{ inputs.output }}

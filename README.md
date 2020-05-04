@@ -1,1 +1,1 @@
-# bridgecrew-action
+# Bridgecrew-GitHub-action
