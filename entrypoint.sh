@@ -4,10 +4,8 @@ OUTPUT=${OUTPUT}
 DIRECTORY=${DIRECTORY}
 FILE=${FILE}
 API_KEY=${API_KEY_VARIABLE}
-REPO_URL=`git ls-remote --get-url`
-REPO=`echo $REPO_URL | awk -F"[:.]" '{print $3}'`
-BRANCH=`git rev-parse --abbrev-ref HEAD`
-CMD_STR="bridgecrew -o $OUTPUT --branch $BRANCH"
+
+CMD_STR="bridgecrew -o $OUTPUT"
 if [[ $FILE == $NONE ]] && [[ $DIRECTORY == $NONE ]]; then
   echo "file or directory must be provided"
   exit 1
