@@ -4,15 +4,17 @@ description: 'Run Bridgecrew against infrastructure code, as a pre-packaged Gith
 inputs:
   api-key-variable:
     description: 'Environment variable name of the Bridgecrew API key from Bridgecrew app'
+    default: 'BC_API_KEY'
     required: false
 
   directory:
     description: 'Directory with infrastructure code to scan'
-    default: '.'
+    default: "none"
     required: false
 
   file:
     description: 'IaC file to scan'
+    default: 'none'
     required: false
 
   soft-fail:
@@ -32,9 +34,9 @@ branding:
 runs:
   using: 'docker'
   image: 'Dockerfile'
-  args:
-    - ${{ inputs.api-key-variable }}
-    - ${{ inputs.directory }}
-    - ${{ inputs.file }}
-    - ${{ inputs.soft-fail }}
-    - ${{ inputs.output }}
+  env:
+    API_KEY_VARIABLE: ${{ inputs.api-key-variable }}
+    DIRECTORY: ${{ inputs.directory }}
+    FILE: ${{ inputs.file }}
+    SOFT_FAIL: ${{ inputs.soft-fail }}
+    OUTPUT: ${{ inputs.output }}

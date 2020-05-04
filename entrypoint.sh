@@ -1,0 +1,31 @@
+NONE=none
+SUPPRESS=${SOFT_FAILE}
+OUTPUT=${OUTPUT}
+DIRECTORY=${DIRECTORY}
+FILE=${FILE}
+API_KEY=${API_KEY_VARIABLE}
+REPO_URL=`git ls-remote --get-url`
+REPO=`echo $REPO_URL | awk -F"[:.]" '{print $3}'`
+BRANCH=`git rev-parse --abbrev-ref HEAD`
+CMD_STR="bridgecrew -o $OUTPUT --branch $BRANCH"
+if [[ $FILE == $NONE ]] && [[ $DIRECTORY == $NONE ]]; then
+  echo "file or directory must be provided"
+  exit 1
+elif [[ $FILE != $NONE ]] && [[ $DIRECTORY != $NONE ]]; then
+  echo "cannot provide file and directory, chose only one"
+  exit 1
+fi
+if [ $SUPPRESS == true ]; then
+  CMD_STR="$CMD_STR -s"
+fi
+if [ $FILE != $NONE ]; then
+  CMD_STR="$CMD_STR -f $FILE"
+fi
+if [ $DIRECTORY != $NONE ]; then
+  CMD_STR="$CMD_STR -d $DIRECTORY"
+fi
+if [ -n "$API_KEY" ]; then
+  CMD_STR="$CMD_STR --bc-api-key $API_KEY --repo-id $REPO"
+fi
+echo "running bridgecrew with command $CMD_STR"
+echo $CMD_STR | sh
