@@ -26,9 +26,9 @@ All you need to do is:
     id: Bridgecrew scanner
     uses: bridgecrewio/bridgecrew-action@master
     with:
-      DIRECTORY: 'terraform'
-      SOFT-FAIL: 'true'
-      OUTPUT: "junitxml"
+      directory: 'terraform'
+      soft-fail: "true"
+      output: "junitxml"
 ```
 
 ### Scan IaC Files
@@ -38,9 +38,9 @@ All you need to do is:
     id: Bridgecrew scanner
     uses: bridgecrewio/bridgecrew-action@master
     with:
-        FILE: "./terraform/db-app.tf"
-        OUTPUT: "json"
-        API-KEY-VARIABLE: "BC_API_KEY"
+        file: "./terraform/db-app.tf"
+        output: "json"
+        api-key-variable: "BC_API_KEY"
 ```
 
 ## GitHub action Parameters
