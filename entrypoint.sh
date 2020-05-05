@@ -27,5 +27,5 @@ fi
 #if [ -n "$API_KEY" ]; then
 #  CMD_STR="$CMD_STR --bc-api-key $API_KEY --repo-id ${GITHUB_REF##*/}"
 #fi
-echo "running bridgecrew with command $CMD_STR"
+echo "running bridgecrew with command: $CMD_STR"
 echo $CMD_STR | sh
