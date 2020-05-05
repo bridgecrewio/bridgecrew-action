@@ -43,12 +43,6 @@ All you need to do is:
         API-KEY-VARIABLE: "BC_API_KEY"
 ```
 
-### Advanced Example
-
-```yaml
-
-```
-
 ## GitHub action Parameters
 
 Full reference docs [TODO]
