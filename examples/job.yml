@@ -1,0 +1,22 @@
+name: bridgecrew-scanner
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      # Runs a set of commands using the runners shell
+      - name: Run Bridgecrew scanner
+        id: Bridgecrew scanner
+        uses: bridgecrewio/bridgecrew-action@master
+
