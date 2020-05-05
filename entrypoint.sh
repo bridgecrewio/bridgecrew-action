@@ -1,6 +1,6 @@
 #!/bin/sh -l
 
-NONE='none'
+NONE=none
 SUPPRESS=${SOFT_FAILE}
 OUTPUT=${OUTPUT}
 DIRECTORY=${DIRECTORY}
