@@ -16,7 +16,7 @@ All you need to do is:
 1. Follow the instructions at the [TODO]
 2. Set up an environment variable with your Bridgecrew API key, which you can get from your [Bridgecrew account](https://www.bridgecrew.cloud/integrations).
 3. In the app build job, uses the `bridgecrewio/bridgecrew-action@master`
-
+4. Optionally, supply parameters to customize GitHub action behaviour
 ## Usage Examples
 
 ### Scan IaC Directory
