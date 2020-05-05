@@ -38,7 +38,9 @@ All you need to do is:
     id: Bridgecrew scanner
     uses: bridgecrewio/bridgecrew-action@master
     with:
-      DIRECTORY: 'terraform'
+        FILE: "./terraform/db-app.tf"
+        OUTPUT: "json"
+        API-KEY-VARIABLE: "BC_API_KEY"
 ```
 
 ### Advanced Example
