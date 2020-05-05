@@ -22,13 +22,23 @@ All you need to do is:
 ### Scan IaC Directory
 
 ```yaml
-
+  - name: Run Bridgecrew scanner
+    id: Bridgecrew scanner
+    uses: bridgecrewio/bridgecrew-action@master
+    with:
+      DIRECTORY: 'terraform'
+      SOFT-FAIL: 'true'
+      OUTPUT: "junitxml"
 ```
 
 ### Scan IaC Files
 
 ```yaml
-
+  - name: Run Bridgecrew scanner
+    id: Bridgecrew scanner
+    uses: bridgecrewio/bridgecrew-action@master
+    with:
+      DIRECTORY: 'terraform'
 ```
 
 ### Advanced Example
