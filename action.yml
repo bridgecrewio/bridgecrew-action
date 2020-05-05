@@ -19,7 +19,7 @@ inputs:
 
   soft-fail:
     description: 'Runs checks but suppresses error code'
-    default: false
+    default: 'false'
     required: false
 
   output:

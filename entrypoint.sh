@@ -1,6 +1,6 @@
 #!/bin/sh -l
 
-NONE=none
+NONE='none'
 SUPPRESS=${SOFT_FAILE}
 OUTPUT=${OUTPUT}
 DIRECTORY=${DIRECTORY}
@@ -15,7 +15,7 @@ elif [[ $FILE != $NONE ]] && [[ $DIRECTORY != $NONE ]]; then
   echo "cannot provide file and directory, chose only one"
   exit 1
 fi
-if [ $SUPPRESS == true ]; then
+if [ $SUPPRESS == 'true' ]; then
   CMD_STR="$CMD_STR -s"
 fi
 if [ $FILE != $NONE ]; then
