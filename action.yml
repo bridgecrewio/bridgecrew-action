@@ -9,7 +9,7 @@ inputs:
 
   directory:
     description: 'Directory with infrastructure code to scan'
-    default: "none"
+    default: 'none'
     required: false
 
   file:

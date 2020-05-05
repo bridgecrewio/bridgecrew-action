@@ -1,3 +1,5 @@
+#!/bin/bash
+
 NONE=none
 SUPPRESS=${SOFT_FAILE}
 OUTPUT=${OUTPUT}
