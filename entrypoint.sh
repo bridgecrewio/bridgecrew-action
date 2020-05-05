@@ -1,4 +1,4 @@
-#!/bin/sh -l
+#!/bin/bash
 
 NONE=none
 SUPPRESS=${SOFT_FAILE}
