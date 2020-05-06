@@ -13,7 +13,7 @@ The community plan does not limit the number of scans or users you can invite to
 In fact, it is very easy to start using the GitHub action.
 All you need to do is:
 
-1. Follow the instructions at the [TODO]
+1. Follow the instructions at the [GitHub configuration a workflow](https://help.github.com/en/actions/configuring-and-managing-workflows/configuring-a-workflow) to enable Github Action in your repository. 
 2. Set up an environment variable with your Bridgecrew API key, which you can get from your [Bridgecrew account](https://www.bridgecrew.cloud/integrations).
 3. In the app build job, uses the `bridgecrewio/bridgecrew-action@master`
 4. Optionally, supply parameters to customize GitHub action behaviour
