@@ -4,7 +4,6 @@ description: 'Run Bridgecrew against infrastructure code, as a pre-packaged Gith
 inputs:
   api-key-variable:
     description: 'Environment variable name of the Bridgecrew API key from Bridgecrew app'
-    default: 'API_KEY'
     required: false
 
   directory:
