@@ -26,7 +26,7 @@ All you need to do is:
     id: Bridgecrew scanner
     uses: bridgecrewio/bridgecrew-action@master
     with:
-      directory: 'terraform'
+      directory: "terraform"
       soft-fail: "true"
       output: "junitxml"
 ```
