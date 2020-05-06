@@ -52,7 +52,7 @@ Full reference docs [TODO]
 | api-key-variable | Environment variable name of the Bridgecrew API key from Bridgecrew app | No | API_KEY | env_var_name |
 | directory | IaC root directory to scan | No | "none" | Input parameter |
 | file | IaC file to scan | No | "none" | Input parameter |
-| soft-fail | Runs checks without failing build | No | false | Input parameters |
+| soft-fail | Runs checks without failing build | No | "false" | Input parameters |
 | output | Report output format | No | "cli" | cli \ json \ junitxml |
 
 ## Screenshots
