@@ -40,7 +40,7 @@ All you need to do is:
     with:
         file: "./terraform/db-app.tf"
         output: "json"
-        api-key-variable: "BC_API_KEY"
+        api-key-variable: "API_KEY"
 ```
 
 ## GitHub action Parameters
@@ -49,7 +49,7 @@ Full reference docs [TODO]
 
 | Parameter  | Description | Required | Default | Type |
 | -----------| -------------------------------------------------------------------------------------------------------- | ------------- | ------------- | ------------- |
-| api-key-variable | Environment variable name of the Bridgecrew API key from Bridgecrew app | No | BC_API_KEY | env_var_name |
+| api-key-variable | Environment variable name of the Bridgecrew API key from Bridgecrew app | No | API_KEY | env_var_name |
 | directory | IaC root directory to scan | No | "none" | Input parameter |
 | file | IaC file to scan | No | "none" | Input parameter |
 | soft-fail | Runs checks without failing build | No | false | Input parameters |
