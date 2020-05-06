@@ -8,7 +8,7 @@ fix and monitor your project for configuration errors in Terraform and CloudForm
 By signing up for a free Bridgecrew Community plan you can also view dashboards and reports. 
 The community plan does not limit the number of scans or users you can invite to view the results.
 ​
-## How to use the Bridgecrew Orb
+## How to use the Bridgecrew GitHub Action
 
 In fact, it is very easy to start using the GitHub action.
 All you need to do is:
