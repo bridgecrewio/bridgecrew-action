@@ -49,11 +49,11 @@ Full reference docs [TODO]
 
 | Parameter  | Description | Required | Default | Type |
 | -----------| -------------------------------------------------------------------------------------------------------- | ------------- | ------------- | ------------- |
-| api-key-variable | Environment variable name of the Bridgecrew API key from Bridgecrew app | no | BC_API_KEY | env_var_name |
-| directory | IaC root directory to scan | no | "none" | string |
-| file | IaC file to scan | no | "none" | string |
-| soft-fail | Runs checks without failing build | no | false | boolean |
-| output | Report output format | no | "cli" | cli \ json \ junitxml |
+| api-key-variable | Environment variable name of the Bridgecrew API key from Bridgecrew app | No | BC_API_KEY | env_var_name |
+| directory | IaC root directory to scan | No | "none" | Input parameter |
+| file | IaC file to scan | No | "none" | Input parameter |
+| soft-fail | Runs checks without failing build | No | false | Input parameters |
+| output | Report output format | No | "cli" | cli \ json \ junitxml |
 
 ## Screenshots
 Run Bridgecrew GitHub in your GitHub pipeline
