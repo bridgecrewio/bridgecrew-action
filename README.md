@@ -23,7 +23,7 @@ All you need to do is:
 
 ```yaml
   - name: Run Bridgecrew scanner
-    id: Bridgecrew scanner
+    id: BridgecrewScanner
     uses: bridgecrewio/bridgecrew-action@master
     with:
       directory: "terraform"
