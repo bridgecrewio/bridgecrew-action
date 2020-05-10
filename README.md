@@ -46,8 +46,6 @@ All you need to do is:
 
 ## GitHub action Parameters
 
-Full reference docs [TODO]
-
 | Parameter  | Description | Required | Default | Type |
 | -----------| -------------------------------------------------------------------------------------------------------- | ------------- | ------------- | ------------- |
 | api-key-variable | Environment variable name of the Bridgecrew API key from Bridgecrew app | No |  | Secret parameter |
@@ -55,6 +53,8 @@ Full reference docs [TODO]
 | file | IaC file to scan | No | "none" | Input parameter |
 | soft-fail | Runs checks without failing build | No | "false" | Input parameters |
 | output | Report output format | No | "cli" | cli \ json \ junitxml |
+
+Full reference docs [here](https://docs.bridgecrew.io/docs/integrate-with-github-actions).
 
 ## Screenshots
 Run Bridgecrew GitHub in your GitHub pipeline
