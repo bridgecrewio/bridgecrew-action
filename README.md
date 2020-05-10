@@ -32,7 +32,7 @@ All you need to do is:
       api-key-variable: ${{ secrets.API_KEY }}
 ```
 
-### Scan IaC Files
+### Scan IaC File
 
 ```yaml
   - name: Run Bridgecrew scanner
