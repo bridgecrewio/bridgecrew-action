@@ -1,6 +1,6 @@
 name: 'Bridgecrew Github Action'
 author: 'Bridgecrew.io'
-description: 'Run Bridgecrew against infrastructure code, as a pre-packaged Github Action.'
+description: 'Find and fix security and compliance issues in infrastructure code using Bridgecrew Action'
 inputs:
   directory:
     description: 'directory with infrastructure code to scan'
