@@ -22,24 +22,23 @@ All you need to do is:
 ### Scan IaC Directory
 
 ```yaml
-  - name: Run Bridgecrew scanner
-    id: Bridgecrew scanner
+  - name: Run Bridgecrew 
+    id: Bridgecrew
     uses: bridgecrewio/bridgecrew-action@master
     with:
       directory: "terraform"
       soft-fail: "true"
-      output: "junitxml"
-      api-key-variable: ${{ secrets.API_KEY }}
+      api-key: ${{ secrets.API_KEY }}
 ```
 
 ### Scan IaC File
 
 ```yaml
-  - name: Run Bridgecrew scanner
-    id: Bridgecrew scanner
+  - name: Run Bridgecrew 
+    id: Bridgecrew
     uses: bridgecrewio/bridgecrew-action@master
     with:
-        api-key-variable: ${{ secrets.API_KEY }}
+        api-key: ${{ secrets.API_KEY }}
 ```
 
 ## GitHub action Parameters
