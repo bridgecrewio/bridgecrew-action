@@ -19,27 +19,17 @@ All you need to do is:
 4. Optionally, supply parameters to customize GitHub action behaviour
 ## Usage Examples
 
-### Scan IaC Directory
+### Scan IaC in your repository
 
 ```yaml
   - name: Run Bridgecrew 
     id: Bridgecrew
     uses: bridgecrewio/bridgecrew-action@master
     with:
-      directory: "terraform"
-      soft-fail: "true"
       api-key: ${{ secrets.API_KEY }}
 ```
 
-### Scan IaC File
 
-```yaml
-  - name: Run Bridgecrew 
-    id: Bridgecrew
-    uses: bridgecrewio/bridgecrew-action@master
-    with:
-        api-key: ${{ secrets.API_KEY }}
-```
 
 ## GitHub action Parameters
 
@@ -56,4 +46,7 @@ All you need to do is:
 Full reference docs [here](https://docs.bridgecrew.io/docs/integrate-with-github-actions).
 
 ## Screenshots
-Run Bridgecrew GitHub in your GitHub pipeline
+Reject pull requests containing infrastructure code configuration errors
+![](resources/failed-action.png)
+Find & fix resources that might be a risk
+![](resources/problem-matcher.png)
