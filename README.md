@@ -4,7 +4,7 @@
 
 Use the Bridgecrew GitHub action to scan for infrastrcture-as-code errors in your GitHub action pipeline.
 By utilizing this GitHub action in your project workflow, you can automatically start to find,
-fix and monitor your project for configuration errors in Terraform and CloudFormation. 
+fix and monitor your project for configuration errors in Terraform, CloudFormation and kubernetes. 
 By signing up for a free Bridgecrew Community plan you can also view dashboards and reports. 
 The community plan does not limit the number of scans or users you can invite to view the results.
 ​
@@ -22,37 +22,36 @@ All you need to do is:
 ### Scan IaC Directory
 
 ```yaml
-  - name: Run Bridgecrew scanner
-    id: Bridgecrew scanner
+  - name: Run Bridgecrew 
+    id: Bridgecrew
     uses: bridgecrewio/bridgecrew-action@master
     with:
       directory: "terraform"
       soft-fail: "true"
-      output: "junitxml"
-      api-key-variable: ${{ secrets.API_KEY }}
+      api-key: ${{ secrets.API_KEY }}
 ```
 
 ### Scan IaC File
 
 ```yaml
-  - name: Run Bridgecrew scanner
-    id: Bridgecrew scanner
+  - name: Run Bridgecrew 
+    id: Bridgecrew
     uses: bridgecrewio/bridgecrew-action@master
     with:
-        file: "./terraform/db-app.tf"
-        output: "json"
-        api-key-variable: ${{ secrets.API_KEY }}
+        api-key: ${{ secrets.API_KEY }}
 ```
 
 ## GitHub action Parameters
 
 | Parameter  | Description | Required | Default | Type |
 | -----------| -------------------------------------------------------------------------------------------------------- | ------------- | ------------- | ------------- |
-| api-key-variable | Environment variable name of the Bridgecrew API key from Bridgecrew app | No |  | Secret parameter |
-| directory | IaC root directory to scan | No | "none" | Input parameter |
-| file | IaC file to scan | No | "none" | Input parameter |
-| soft-fail | Runs checks without failing build | No | "false" | Input parameters |
-| output | Report output format | No | "cli" | cli \ json \ junitxml |
+| api-key | Environment variable name of the Bridgecrew API key from Bridgecrew app | No |  | Secret parameter |
+| directory | IaC root directory to scan | No | "." | Input parameter |
+| soft-fail | Runs checks without failing build | No | | Input parameters |
+| check | filter scan to run only on a specific check identifier, You can specify multiple checks separated by comma delimiter | No |  | Input parameters |
+| skip-check | filter scan to run on all check but a specific check identifier(blacklist), You can specify multiple checks separated by comma delimiter | No |  | Input parameters |
+| quiet | display only failed checks | No |  | Input parameters |
+
 
 Full reference docs [here](https://docs.bridgecrew.io/docs/integrate-with-github-actions).
 
