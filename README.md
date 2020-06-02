@@ -43,7 +43,7 @@ All you need to do is:
 | quiet | display only failed checks | No |  | Input parameters |
 
 
-Full reference docs [here](https://docs.bridgecrew.io/docs/integrate-with-github-actions).
+Full reference docs [here](https://docs.bridgecrew.io/docs/integrate-with-github-actions-v2).
 
 ## Screenshots
 Reject pull requests containing infrastructure code configuration errors
