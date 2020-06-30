@@ -1,1 +1,1 @@
-bridgecrew==1.0.404
+bridgecrew==1.0.405
