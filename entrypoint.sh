@@ -16,7 +16,7 @@ API_KEY=${API_KEY_VARIABLE}
 CMD_STR="bridgecrew -o $OUTPUT"
 
 if [ -n "$API_KEY_VARIABLE" ]; then
-  bridgecrew --bc-api-key $API_KEY_VARIABLE --branch ${GITHUB_REF##*/} --repo-id $GITHUB_REPOSITORY -d $INPUT_DIRECTORY $CHECK_FLAG $SKIP_CHECK_FLAG $QUIET_FLAG $SOFT_FAIL_FLAG --cicd-type github-action
+  bridgecrew --bc-api-key $API_KEY_VARIABLE --branch ${GITHUB_REF##*/} --repo-id $GITHUB_REPOSITORY -d $INPUT_DIRECTORY $CHECK_FLAG $SKIP_CHECK_FLAG $QUIET_FLAG $SOFT_FAIL_FLAG --source githubActions
   else
   bridgecrew -d $INPUT_DIRECTORY $CHECK_FLAG $SKIP_CHECK_FLAG $QUIET_FLAG
 fi
