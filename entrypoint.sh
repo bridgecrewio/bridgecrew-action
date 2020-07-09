@@ -3,6 +3,7 @@
 matcher_path=`pwd`/bridgecrew-problem-matcher.json
 cp /usr/local/lib/bridgecrew-problem-matcher.json "$matcher_path"
 echo "::add-matcher::bridgecrew-problem-matcher.json"
+export BC_SOURCE=githubActions
 
 [[ ! -z "$INPUT_CHECK" ]] && CHECK_FLAG="--check $INPUT_CHECK"
 [[ ! -z "$INPUT_SKIP_CHECK" ]] && SKIP_CHECK_FLAG="--skip-check $INPUT_SKIP_CHECK"
