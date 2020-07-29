@@ -41,7 +41,7 @@ All you need to do is:
 | check | filter scan to run only on a specific check identifier, You can specify multiple checks separated by comma delimiter | No |  | Input parameters |
 | skip-check | filter scan to run on all check but a specific check identifier(blacklist), You can specify multiple checks separated by comma delimiter | No |  | Input parameters |
 | quiet | display only failed checks | No |  | Input parameters |
-
+| external-checks-dir | Directory for custom checks to be loaded | No |  | Input parameters |
 
 Full reference docs [here](https://docs.bridgecrew.io/docs/integrate-with-github-actions-v2).
 

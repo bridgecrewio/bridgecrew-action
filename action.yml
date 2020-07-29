@@ -21,6 +21,9 @@ inputs:
   soft-fail:
     description: 'Runs checks but suppresses error code'
     required: false
+  external-checks-dir:
+    description: 'Directory for custom checks to be loaded'
+    required: false
 
 
 branding:
@@ -36,5 +39,6 @@ runs:
     - ${{ inputs.skip_check }}
     - ${{ inputs.quiet }}
     - ${{ inputs.soft-fail }}
+    - ${{ inputs.external-checks-dir }}
   env:
     API_KEY_VARIABLE: ${{ inputs.api-key }}
