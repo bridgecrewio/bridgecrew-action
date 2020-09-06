@@ -10,7 +10,7 @@ export BC_SOURCE=githubActions
 [[ ! -z "$INPUT_QUIET" ]] && QUIET_FLAG="--quiet"
 [[ ! -z "$INPUT_SOFT-FAIL" ]] && SOFT_FAIL_FLAG="--soft-fail"
 [[ ! -z "$EXTERNAL_CHECKS_DIR" ]] && EXTERNAL_CHECKS_DIR_FLAG="--external-checks-dir $EXTERNAL_CHECKS_DIR"
-[[ ! -z "$INPUT_OUTPUT_FORMAT" ]] && OUTPUT_FLAG="-o $INPUT_OUTPUT_FORMAT"
+[[ ! -z "$INPUT_OUTPUT-FORMAT" ]] && OUTPUT_FLAG="-o $INPUT_OUTPUT_FORMAT"
 
 
 NONE=none
