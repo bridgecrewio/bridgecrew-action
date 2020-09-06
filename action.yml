@@ -18,7 +18,7 @@ inputs:
   api-key:
     description: 'Environment variable name of the Bridgecrew API key from Bridgecrew app'
     required: false
-  soft-fail:
+  soft_fail:
     description: 'Runs checks but suppresses error code'
     required: false
   external-checks-dir:
@@ -42,7 +42,7 @@ runs:
     - ${{ inputs.check }}
     - ${{ inputs.skip_check }}
     - ${{ inputs.quiet }}
-    - ${{ inputs.soft-fail }}
+    - ${{ inputs.soft_fail }}
     - ${{ inputs.external-checks-dir }}
     - ${{ inputs.output-format }}
   env:
