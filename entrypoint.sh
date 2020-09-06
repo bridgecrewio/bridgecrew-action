@@ -22,6 +22,8 @@ CMD_STR="bridgecrew -o $OUTPUT"
 echo "b"
 echo $GITHUB_REPOSITORY
 echo $GITHUB_REF
+cmd="bridgecrew --bc-api-key $API_KEY_VARIABLE --branch ${GITHUB_REF##*/} --repo-id $GITHUB_REPOSITORY -d $INPUT_DIRECTORY $CHECK_FLAG $SKIP_CHECK_FLAG $QUIET_FLAG $SOFT_FAIL_FLAG $EXTERNAL_CHECKS_DIR_FLAG $OUTPUT_FLAG"
+echo $cmd
 echo "b"
 
 if [ -n "$API_KEY_VARIABLE" ]; then
