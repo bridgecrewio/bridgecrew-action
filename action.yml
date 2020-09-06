@@ -47,3 +47,7 @@ runs:
     - ${{ inputs.output_format }}
   env:
     API_KEY_VARIABLE: ${{ inputs.api-key }}
+    GITHUB_REPOSITORY: $GITHUB_REPOSITORY
+    GITHUB_REF: $GITHUB_REF
+    GITHUB_SHA: $GITHUB_SHA
+    GITHUB_SERVER_URL: $GITHUB_SERVER_URL
