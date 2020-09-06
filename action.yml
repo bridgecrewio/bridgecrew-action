@@ -24,6 +24,10 @@ inputs:
   external-checks-dir:
     description: 'Directory for custom checks to be loaded'
     required: false
+  output-format:
+    description: 'Output Format (cli, cli+sarif, json, junitxml)'
+    required: false
+    default: 'sarif'
 
 
 branding:
@@ -40,5 +44,6 @@ runs:
     - ${{ inputs.quiet }}
     - ${{ inputs.soft-fail }}
     - ${{ inputs.external-checks-dir }}
+    - ${{ inputs.output-format }}
   env:
     API_KEY_VARIABLE: ${{ inputs.api-key }}
