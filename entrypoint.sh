@@ -1,7 +1,10 @@
 #!/bin/bash
 
 matcher_path=`pwd`/bridgecrew-problem-matcher.json
+warning_matcher_path=`pwd`bridgecrew-problem-matcher-warning.json
 cp /usr/local/lib/bridgecrew-problem-matcher.json "$matcher_path"
+cp /usr/local/lib/bridgecrew-problem-matcher-warning.json "$warning_matcher_path"
+
 export BC_SOURCE=githubActions
 
 [[ ! -z "$INPUT_CHECK" ]] && CHECK_FLAG="--check $INPUT_CHECK"
