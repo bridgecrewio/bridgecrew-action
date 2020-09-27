@@ -20,15 +20,17 @@ API_KEY=${API_KEY_VARIABLE}
 
 CMD_STR="bridgecrew -o $OUTPUT"
 GIT_BRANCH=${GITHUB_HEAD_REF:=master}
-cmd="bridgecrew --bc-api-key $API_KEY_VARIABLE --branch $GIT_BRANCH --repo-id $GITHUB_REPOSITORY -d $INPUT_DIRECTORY $CHECK_FLAG $SKIP_CHECK_FLAG $QUIET_FLAG $SOFT_FAIL_FLAG $EXTERNAL_CHECKS_DIR_FLAG $OUTPUT_FLAG"
-echo $cmd
+ls
 
 if [ -n "$INPUT_SOFT"]; then
     echo "::add-matcher::bridgecrew-problem-matcher-warning.json"
     else
     echo "::add-matcher::bridgecrew-problem-matcher.json"
-
 fi
+
+
+cmd="bridgecrew --bc-api-key $API_KEY_VARIABLE --branch $GIT_BRANCH --repo-id $GITHUB_REPOSITORY -d $INPUT_DIRECTORY $CHECK_FLAG $SKIP_CHECK_FLAG $QUIET_FLAG $SOFT_FAIL_FLAG $EXTERNAL_CHECKS_DIR_FLAG $OUTPUT_FLAG"
+echo $cmd
 
 if [ -n "$API_KEY_VARIABLE" ]; then
   bridgecrew --bc-api-key $API_KEY_VARIABLE --branch $GIT_BRANCH --repo-id $GITHUB_REPOSITORY -d $INPUT_DIRECTORY $CHECK_FLAG $SKIP_CHECK_FLAG $QUIET_FLAG $SOFT_FAIL_FLAG $EXTERNAL_CHECKS_DIR_FLAG $OUTPUT_FLAG
