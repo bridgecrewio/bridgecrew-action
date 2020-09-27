@@ -1,1 +1,1 @@
-bridgecrew==1.0.551
+bridgecrew==1.0.552
