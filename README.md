@@ -29,7 +29,9 @@ All you need to do is:
       api-key: ${{ secrets.API_KEY }}
 ```
 
-
+### Github code scanning
+Bridgecrew supports github [code scanning](https://docs.github.com/en/free-pro-team@latest/github/finding-security-vulnerabilities-and-errors-in-your-code/about-code-scanning). 
+An example workflow configuration can be found [here](examples/code_scanning.yml).
 
 ## GitHub action Parameters
 
