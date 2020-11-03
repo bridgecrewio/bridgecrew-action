@@ -10,7 +10,7 @@ export BC_SOURCE=githubActions
 [[ ! -z "$INPUT_CHECK" ]] && CHECK_FLAG="--check $INPUT_CHECK"
 [[ ! -z "$INPUT_SKIP_CHECK" ]] && SKIP_CHECK_FLAG="--skip-check $INPUT_SKIP_CHECK"
 [[ ! -z "$INPUT_QUIET" ]] && QUIET_FLAG="--quiet"
-[[ ! -z "$INPUT_SOFT-FAIL" ]] && SOFT_FAIL_FLAG="--soft-fail"
+[[ ! -z "$INPUT_SOFT_FAIL" ]] && SOFT_FAIL_FLAG="--soft-fail"
 [[ ! -z "$EXTERNAL_CHECKS_DIR" ]] && EXTERNAL_CHECKS_DIR_FLAG="--external-checks-dir $EXTERNAL_CHECKS_DIR"
 [[ ! -z "$INPUT_OUTPUT_FORMAT" ]] && OUTPUT_FLAG="-o $INPUT_OUTPUT_FORMAT"
 
@@ -22,7 +22,7 @@ CMD_STR="bridgecrew -o $OUTPUT"
 GIT_BRANCH=${GITHUB_HEAD_REF:=master}
 ls
 
-if [ -n "$INPUT_SOFT"]; then
+if [ -n "$INPUT_SOFT_FAIL"]; then
     echo "::add-matcher::bridgecrew-problem-matcher-warning.json"
     else
     echo "::add-matcher::bridgecrew-problem-matcher.json"
