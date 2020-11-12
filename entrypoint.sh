@@ -22,7 +22,7 @@ CMD_STR="bridgecrew -o $OUTPUT"
 GIT_BRANCH=${GITHUB_HEAD_REF:=master}
 ls
 
-if [ -n "$INPUT_SOFT_FAIL"]; then
+if [ -z "$INPUT_SOFT_FAIL"]; then
     echo "::add-matcher::bridgecrew-problem-matcher-warning.json"
     else
     echo "::add-matcher::bridgecrew-problem-matcher.json"
