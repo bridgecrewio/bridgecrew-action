@@ -21,7 +21,7 @@ API_KEY=${API_KEY_VARIABLE}
 CMD_STR="bridgecrew -o $OUTPUT"
 GIT_BRANCH=${GITHUB_HEAD_REF:=master}
 ls
-
+echo "input_soft_fail:$INPUT_SOFT_FAIL"
 if [ -z "$INPUT_SOFT_FAIL"]; then
     echo "::add-matcher::bridgecrew-problem-matcher-warning.json"
     else
