@@ -23,9 +23,9 @@ GIT_BRANCH=${GITHUB_HEAD_REF:=master}
 ls
 echo "input_soft_fail:$INPUT_SOFT_FAIL"
 if [ -z "$INPUT_SOFT_FAIL"]; then
-    echo "::add-matcher::bridgecrew-problem-matcher-warning.json"
-    else
     echo "::add-matcher::bridgecrew-problem-matcher.json"
+    else
+    echo "::add-matcher::bridgecrew-problem-matcher-warning.json"
 fi
 
 
