@@ -2,7 +2,7 @@
 
 ## The Bridgecrew GitHub Action
 
-Use the Bridgecrew GitHub action to scan for infrastrcture-as-code errors in your GitHub action pipeline.
+Use the Bridgecrew GitHub action to scan for infrastructure-as-code errors in your GitHub action pipeline.
 By utilizing this GitHub action in your project workflow, you can automatically start to find,
 fix and monitor your project for configuration errors in Terraform, CloudFormation and kubernetes. 
 By signing up for a free Bridgecrew Community plan you can also view dashboards and reports. 
