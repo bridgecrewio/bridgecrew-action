@@ -29,11 +29,16 @@ All you need to do is:
         with:
          api-key: ${{ secrets.BRIDGECREW_API_KEY }}
          directory: "example/examplea"
+         check: CKV_AWS_1 # optional: run only a specific check_id. can be comma separated list
+         skip_check: CKV_AWS_1 # optional: skip a specific check_id. can be comma separated list
          soft_fail: false
-         skip_check: CKV_GCP_23
+         framework: terraform # optional: run only on a specific infrastructure {cloudformation,terraform,kubernetes,all}
          output_format: cli
          quiet: false
          external_checks_dir: ./checkov
+         download_external_modules: true # optional: download external terraform modules from public git repositories and terraform registry
+         log_level: DEBUG # optional: set log level. Default WARNING
+
 ```
 
 ### Github code scanning
@@ -53,6 +58,9 @@ An example workflow configuration can be found [here](examples/code_scanning.yml
 | quiet | display only failed checks | No |  | Input parameters |
 | external_checks_dir | Directory for custom checks to be loaded | No |  | Input parameters |
 | output_format| The format of the output - json - cli - sarif | No |  | Input parameters |
+| framework | run on a specific infrastructure | No | | cloudformation,terraform,kubernetes,all |
+| download_external_modules | download external terraform modules from public git repositories and terraform registry | No | |Input parameters |
+| log_level | set log level | No | WARNING | Input parameters |
 
 Full reference docs [here](https://docs.bridgecrew.io/docs/integrate-with-github-actions-v2).
 
