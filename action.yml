@@ -28,6 +28,13 @@ inputs:
     description: 'Output Format (cli, cli+sarif, json, junitxml)'
     required: false
     default: 'sarif'
+  log_level:
+    description: 'The logging level for the CLI'
+    required: false
+  download_external_modules:
+    description: 'Whether to download modules from external sources (e.g., other repos or the registry). Defaults to false.'
+    required: false
+  
 
 
 branding:
