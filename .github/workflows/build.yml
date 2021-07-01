@@ -12,8 +12,8 @@ jobs:
         run: |
           # update bridgecrew version
           version=$(curl -s https://api.github.com/repos/bridgecrewio/bridgecrew-py/releases/latest | jq -r '.name')
-          sed -i'.bkp' -e 's/docker:\/\/bridgecrew\/bridgecrew.*'\''/docker:\/\/bridgecrew\/bridgecrew:'"${version}"''\''/g' action.yaml
-          rm action.yaml.bkp
+          sed -i'.bkp' -e 's/docker:\/\/bridgecrew\/bridgecrew.*'\''/docker:\/\/bridgecrew\/bridgecrew:'"${version}"''\''/g' action.yml
+          rm action.yml.bkp
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: Bump yor container version
