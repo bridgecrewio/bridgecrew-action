@@ -34,7 +34,9 @@ inputs:
   download_external_modules:
     description: 'Whether to download modules from external sources (e.g., other repos or the registry). Defaults to false.'
     required: false
-  
+  config_file:
+    description: 'bridgecrew configuration file'
+    required: false
 
 
 branding:
@@ -52,5 +54,7 @@ runs:
     - ${{ inputs.soft_fail }}
     - ${{ inputs.external_checks_dir }}
     - ${{ inputs.output_format }}
+    - ${{ inputs.config_file }}
+
   env:
     API_KEY_VARIABLE: ${{ inputs.api-key }}
