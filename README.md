@@ -4,7 +4,7 @@
 
 Use the Bridgecrew GitHub action to scan for infrastructure-as-code errors in your GitHub action pipeline.
 By utilizing this GitHub action in your project workflow, you can automatically start to find,
-fix and monitor your project for configuration errors in Terraform, CloudFormation and kubernetes. 
+fix and monitor your project for configuration errors in Terraform, CloudFormation, and Kubernetes. 
 By signing up for a free Bridgecrew Community plan you can also view dashboards and reports. 
 The community plan does not limit the number of scans or users you can invite to view the results.
 ​
@@ -16,7 +16,7 @@ All you need to do is:
 1. Follow the instructions at [GitHub configuration a workflow](https://help.github.com/en/actions/configuring-and-managing-workflows/configuring-a-workflow) to enable Github Action in your repository.
 2. Set up an environment variable with your Bridgecrew API key, which you can get from your [Bridgecrew account](https://www.bridgecrew.cloud/integrations).
 3. In the app build job, uses the `bridgecrewio/bridgecrew-action@master`
-4. Optionally, supply parameters to customize GitHub action behaviour
+4. Optionally, supply parameters to customize GitHub action behavior
 
 ## Usage Examples
 
@@ -43,7 +43,7 @@ All you need to do is:
 
 ### Github code scanning
 
-Bridgecrew supports github [code scanning](https://docs.github.com/en/free-pro-team@latest/github/finding-security-vulnerabilities-and-errors-in-your-code/about-code-scanning).
+Bridgecrew supports GitHub [code scanning](https://docs.github.com/en/free-pro-team@latest/github/finding-security-vulnerabilities-and-errors-in-your-code/about-code-scanning).
 An example workflow configuration can be found [here](examples/code_scanning.yml).
 
 ## GitHub action Parameters
@@ -58,7 +58,7 @@ An example workflow configuration can be found [here](examples/code_scanning.yml
 | quiet | display only failed checks | No |  | Input parameters |
 | external_checks_dir | Directory for custom checks to be loaded | No |  | Input parameters |
 | output_format| The format of the output - json - cli - sarif | No |  | Input parameters |
-| framework | run on a specific infrastructure | No | | cloudformation,terraform,kubernetes,all |
+| framework | run on a specific infrastructure | No | | Cloudformation,Terraform,Kubernetes,all |
 | download_external_modules | download external terraform modules from public git repositories and terraform registry | No | |Input parameters |
 | log_level | set log level | No | WARNING | Input parameters |
 
