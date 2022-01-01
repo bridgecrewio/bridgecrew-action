@@ -38,7 +38,6 @@ inputs:
     description: 'bridgecrew configuration file'
     required: false
 
-
 branding:
   icon: 'shield'
   color: 'purple'
@@ -54,6 +53,8 @@ runs:
     - ${{ inputs.soft_fail }}
     - ${{ inputs.external_checks_dir }}
     - ${{ inputs.output_format }}
+    - ${{ inputs.log_level }}
+    - ${{ inputs.download_external_modules }}
     - ${{ inputs.config_file }}
 
   env:
