@@ -21,7 +21,7 @@ inputs:
   soft_fail:
     description: 'Runs checks but suppresses error code'
     required: false
-  external_checks_dir:
+  external_checks_dirs:
     description: 'Directory for custom checks to be loaded'
     required: false
   output_format:
@@ -54,7 +54,7 @@ runs:
     - ${{ inputs.skip_check }}
     - ${{ inputs.quiet }}
     - ${{ inputs.soft_fail }}
-    - ${{ inputs.external_checks_dir }}
+    - ${{ inputs.external_checks_dirs }}
     - ${{ inputs.output_format }}
     - ${{ inputs.log_level }}
     - ${{ inputs.download_external_modules }}
