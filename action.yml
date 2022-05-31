@@ -37,6 +37,9 @@ inputs:
   config_file:
     description: 'bridgecrew configuration file'
     required: false
+  var_file:
+    description: 'Variable files to load in addition to the default'
+    required: false
 
 branding:
   icon: 'shield'
@@ -56,6 +59,7 @@ runs:
     - ${{ inputs.log_level }}
     - ${{ inputs.download_external_modules }}
     - ${{ inputs.config_file }}
+    - ${{ inputs.var_file }}
 
   env:
     API_KEY_VARIABLE: ${{ inputs.api-key }}
