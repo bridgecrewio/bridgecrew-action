@@ -60,6 +60,9 @@ inputs:
     default: 0
     description: 'Set the username or UID used and optionally the groupname or GID for the action to run under'
     required: false
+  var_file:
+    description: 'Variable files to load in addition to the default'
+    required: false
 
 branding:
   icon: 'shield'
@@ -67,7 +70,7 @@ branding:
 
 runs:
   using: 'docker'
-  image: 'docker://bridgecrew/bridgecrew:2.0.1161'
+  image: 'docker://bridgecrew/bridgecrew:2.0.1181'
   args:
     - ${{ inputs.directory }}
     - ${{ inputs.check }}
@@ -85,7 +88,8 @@ runs:
     - ${{ inputs.baseline }}
     - ${{ inputs.hard_fail_on }}
     - ${{ inputs.soft_fail_on }}
-    - "--user ${{ inputs.container_user }}" 
+    - ${{ inputs.var_file }}
+    - "--user ${{ inputs.container_user }}"
 
   env:
     API_KEY_VARIABLE: ${{ inputs.api-key }}
