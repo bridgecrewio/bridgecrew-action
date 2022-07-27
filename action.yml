@@ -70,7 +70,7 @@ branding:
 
 runs:
   using: 'docker'
-  image: 'docker://bridgecrew/bridgecrew:2.1.78'
+  image: 'docker://bridgecrew/bridgecrew:2.1.79'
   args:
     - ${{ inputs.directory }}
     - ${{ inputs.check }}
