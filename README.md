@@ -4,8 +4,8 @@
 
 Use the Bridgecrew GitHub action to scan for infrastructure-as-code errors in your GitHub action pipeline.
 By utilizing this GitHub action in your project workflow, you can automatically start to find,
-fix and monitor your project for configuration errors in Terraform, CloudFormation and kubernetes. 
-By signing up for a free Bridgecrew Community plan you can also view dashboards and reports. 
+fix and monitor your project for configuration errors in Terraform, CloudFormation and kubernetes.
+By signing up for a free Bridgecrew Community plan you can also view dashboards and reports.
 The community plan does not limit the number of scans or users you can invite to view the results.
 ​
 ## How to use the Bridgecrew GitHub Action
@@ -23,7 +23,7 @@ All you need to do is:
 ### Scan IaC in your repository
 
 ```yaml
-      - name: Run Bridgecrew 
+      - name: Run Bridgecrew
         id: Bridgecrew
         uses: bridgecrewio/bridgecrew-action@master
         with:
@@ -35,7 +35,7 @@ All you need to do is:
          framework: terraform # optional: run only on a specific infrastructure {cloudformation,terraform,kubernetes,all}
          output_format: cli
          quiet: false
-         external_checks_dir: ./checkov
+         external_checks_dirs: ./checkov
          download_external_modules: true # optional: download external terraform modules from public git repositories and terraform registry
          log_level: DEBUG # optional: set log level. Default WARNING
 
@@ -56,7 +56,7 @@ An example workflow configuration can be found [here](examples/code_scanning.yml
 | check | filter scan to run only on a specific check identifier, You can specify multiple checks separated by comma delimiter | No |  | Input parameters |
 | skip_check | filter scan to run on all check but a specific check identifier(blacklist), You can specify multiple checks separated by comma delimiter, clashes with check | No |  | Input parameters |
 | quiet | display only failed checks | No |  | Input parameters |
-| external_checks_dir | Directory for custom checks to be loaded | No |  | Input parameters |
+| external_checks_dirs | Directory for custom checks to be loaded | No |  | Input parameters |
 | output_format| The format of the output - json - cli - sarif | No |  | Input parameters |
 | framework | run on a specific infrastructure | No | | cloudformation,terraform,kubernetes,all |
 | download_external_modules | download external terraform modules from public git repositories and terraform registry | No | |Input parameters |
