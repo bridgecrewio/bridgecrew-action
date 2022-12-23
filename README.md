@@ -2,12 +2,16 @@
 
 ## The Bridgecrew GitHub Action
 
-Use the Bridgecrew GitHub Action to scan for infrastructure-as-code misconfigurations, 
-vulnerabilities and license issues in open source packages and images, and CI/CD misconfigurations.
+Use the Bridgecrew GitHub action to scan for infrastructure-as-code errors in your GitHub action pipeline.
+By utilizing this GitHub action in your project workflow, you can automatically start to find,
+fix and monitor your project for configuration errors in Terraform, CloudFormation and kubernetes.
 By signing up for a free Bridgecrew Community plan you can also view dashboards and reports.
 The community plan does not limit the number of scans or users you can invite to view the results.
 ​
 ## How to use the Bridgecrew GitHub Action
+
+In fact, it is very easy to start using the GitHub action.
+All you need to do is:
 
 1. Follow the instructions at [GitHub configuration a workflow](https://help.github.com/en/actions/configuring-and-managing-workflows/configuring-a-workflow) to enable Github Action in your repository.
 2. Set up an environment variable with your Bridgecrew API key, which you can get from your [Bridgecrew account](https://www.bridgecrew.cloud/integrations).
@@ -47,15 +51,13 @@ An example workflow configuration can be found [here](examples/code_scanning.yml
 | Parameter  | Description | Required | Default | Type |
 | -----------| -------------------------------------------------------------------------------------------------------- | ------------- | ------------- | ------------- |
 | api-key | Environment variable name of the Bridgecrew API key from Bridgecrew app | No |  | Secret parameter |
-| file | File to scan | No |  | Input parameter |
-| directory | Root directory to scan | No | "." | Input parameter |
+| directory | IaC root directory to scan | No | "." | Input parameter |
 | soft_fail | Runs checks without failing build | No | | Input parameters |
 | check | filter scan to run only on a specific check identifier, You can specify multiple checks separated by comma delimiter | No |  | Input parameters |
 | skip_check | filter scan to run on all check but a specific check identifier(blacklist), You can specify multiple checks separated by comma delimiter, clashes with check | No |  | Input parameters |
 | quiet | display only failed checks | No |  | Input parameters |
 | external_checks_dirs | Directory for custom checks to be loaded | No |  | Input parameters |
 | output_format| The format of the output - json - cli - sarif | No |  | Input parameters |
-| output_file_path | The path for the file output | No |  | Input parameters |
 | framework | run on a specific infrastructure | No | | cloudformation,terraform,kubernetes,all |
 | download_external_modules | download external terraform modules from public git repositories and terraform registry | No | |Input parameters |
 | log_level | set log level | No | WARNING | Input parameters |
