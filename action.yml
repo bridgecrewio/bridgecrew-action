@@ -1,7 +1,10 @@
 name: 'Bridgecrew Github Action'
 author: 'Bridgecrew.io'
-description: 'Find and fix security and compliance issues in infrastructure code using Bridgecrew Action'
+description: 'Find and fix security and compliance issues in infrastructure as code, open source packages, container images, and CI/CD configurations using Bridgecrew Action'
 inputs:
+  file:
+    description: 'File with infrastructure code or packages to scan'
+    required: false
   directory:
     description: 'directory with infrastructure code to scan'
     default: '.'
@@ -37,6 +40,9 @@ inputs:
     description: 'The format of the output. cli, json, junitxml, github_failed_only, or sarif'
     required: false
     default: 'sarif'
+  output_file_path:
+    description: Path and name for output file.
+    required: false
   download_external_modules:
     description: 'download external terraform modules from public git repositories and terraform registry:true, false'
     required: false
@@ -60,9 +66,42 @@ inputs:
     default: 0
     description: 'Set the username or UID used and optionally the groupname or GID for the action to run under'
     required: false
-  var_file:
-    description: 'Variable files to load in addition to the default'
+  docker_image:
+    description: 'Name of the docker image with the tags. Only works with an API and Dockerfile path'
     required: false
+  dockerfile_path:
+    description: 'Path to the Dockerfile of the scanned docker image'
+    required: false
+  var_file:
+    description: 'Variable files to load in addition to the default files. Currently only supported for source Terraform (.tf file), and Helm chart scans. Requires using --directory, not --file.'
+    required: false
+  github_pat:
+    description: 'Environment variable name for a Github personal access token for scanning external modules sourced from private repositories'
+    required: false
+  tfc_token:
+    description: 'Environment variable name for a Terraform Cloud token for scanning external modules sourced from private registries'
+    required: false
+  vcs_base_url:
+    description: 'Environment variable name for the base url of a self hosted VCS with external modules. To be used with vcs_username and vcs_token'
+    required: false
+  vcs_username:
+    description: 'Environment variable name for the username for basic auth against a self hosted VCS with external modules. To be used with vcs_base_url and vcs_token'
+    required: false
+  vcs_token:
+    description: 'Environment variable name for the password (personal access token) for basic auth against a self hosted VCS with external modules. To be used with vcs_base_url and vcs_username'
+    required: false
+  bitbucket_token:
+    description: 'Environment variable name for a Bitbucket access token to scan external modules sourced from a private Bitbucket repository'
+    required: false
+  bitbucket_app_password:
+    description: 'Environment variable name for a Bitbucket app password to perform basic auth inorder to scan external modules sourced from a private Bitbucket repository. To be used with bitbucket_usernam'
+    required: false
+  bitbucket_username:
+    description: 'Environment variable name for a Bitbucket username to perform basic auth inorder to scan external modules sourced from a private Bitbucket repository. To be used with bitbucket_app_password'
+    required: false
+outputs:
+  results:
+    description: 'The results from the scan'
 
 branding:
   icon: 'shield'
@@ -72,6 +111,7 @@ runs:
   using: 'docker'
   image: 'docker://bridgecrew/bridgecrew:2.2.198'
   args:
+    - ${{ inputs.file }}
     - ${{ inputs.directory }}
     - ${{ inputs.check }}
     - ${{ inputs.skip_check }}
@@ -82,14 +122,25 @@ runs:
     - ${{ inputs.external_checks_dirs }}
     - ${{ inputs.external_checks_repos }}
     - ${{ inputs.output_format }}
+    - ${{ inputs.output_file_path }}
     - ${{ inputs.download_external_modules }}
     - ${{ inputs.log_level }}
     - ${{ inputs.config_file }}
     - ${{ inputs.baseline }}
     - ${{ inputs.hard_fail_on }}
     - ${{ inputs.soft_fail_on }}
+    - ${{ inputs.docker_image }}
+    - ${{ inputs.dockerfile_path }}
     - ${{ inputs.var_file }}
     - "--user ${{ inputs.container_user }}"
 
   env:
     API_KEY_VARIABLE: ${{ inputs.api-key }}
+    GITHUB_PAT: ${{ inputs.github_pat }}
+    TFC_TOKEN: ${{ inputs.tfc_token }}
+    VCS_USERNAME: ${{ inputs.vcs_username }}
+    VCS_BASE_URL: ${{ inputs.vcs_base_url }}
+    VCS_TOKEN: ${{ inputs.vcs_token }}
+    BITBUCKET_TOKEN: ${{ inputs.bitbucket_token }}
+    BITBUCKET_USERNAME: ${{ inputs.bitbucket_username }}
+    BITBUCKET_APP_PASSWORD: ${{ inputs.bitbucket_app_password }}
