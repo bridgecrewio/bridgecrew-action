@@ -6,7 +6,7 @@ Use the Bridgecrew GitHub Action to scan for infrastructure-as-code misconfigura
 vulnerabilities and license issues in open source packages and images, and CI/CD misconfigurations.
 By signing up for a free Bridgecrew Community plan you can also view dashboards and reports.
 The community plan does not limit the number of scans or users you can invite to view the results.
-​
+
 ## How to use the Bridgecrew GitHub Action
 
 1. Follow the instructions at [GitHub configuration a workflow](https://help.github.com/en/actions/configuring-and-managing-workflows/configuring-a-workflow) to enable Github Action in your repository.
@@ -44,21 +44,22 @@ An example workflow configuration can be found [here](examples/code_scanning.yml
 
 ## GitHub action Parameters
 
-| Parameter  | Description | Required | Default | Type |
-| -----------| -------------------------------------------------------------------------------------------------------- | ------------- | ------------- | ------------- |
-| api-key | Environment variable name of the Bridgecrew API key from Bridgecrew app | No |  | Secret parameter |
-| file | File to scan | No |  | Input parameter |
-| directory | Root directory to scan | No | "." | Input parameter |
-| soft_fail | Runs checks without failing build | No | | Input parameters |
-| check | filter scan to run only on a specific check identifier, You can specify multiple checks separated by comma delimiter | No |  | Input parameters |
-| skip_check | filter scan to run on all check but a specific check identifier(blacklist), You can specify multiple checks separated by comma delimiter, clashes with check | No |  | Input parameters |
-| quiet | display only failed checks | No |  | Input parameters |
-| external_checks_dirs | Directory for custom checks to be loaded | No |  | Input parameters |
-| output_format| The format of the output - json - cli - sarif | No |  | Input parameters |
-| output_file_path | The path for the file output | No |  | Input parameters |
-| framework | run on a specific infrastructure | No | | cloudformation,terraform,kubernetes,all |
-| download_external_modules | download external terraform modules from public git repositories and terraform registry | No | |Input parameters |
-| log_level | set log level | No | WARNING | Input parameters |
+| Parameter                     | Description                                                                                                                                                  | Required | Default | Type                                    |
+|-------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|---------|-----------------------------------------|
+| api-key                       | Environment variable name of the Bridgecrew API key from Bridgecrew app                                                                                      | No       |         | Secret parameter                        |
+| file                          | File to scan                                                                                                                                                 | No       |         | Input parameter                         |
+| directory                     | Root directory to scan                                                                                                                                       | No       | "."     | Input parameter                         |
+| soft_fail                     | Runs checks without failing build                                                                                                                            | No       |         | Input parameters                        |
+| check                         | filter scan to run only on a specific check identifier, You can specify multiple checks separated by comma delimiter                                         | No       |         | Input parameters                        |
+| skip_check                    | filter scan to run on all check but a specific check identifier(blacklist), You can specify multiple checks separated by comma delimiter, clashes with check | No       |         | Input parameters                        |
+| quiet                         | display only failed checks                                                                                                                                   | No       |         | Input parameters                        |
+| external_checks_dirs          | Directory for custom checks to be loaded                                                                                                                     | No       |         | Input parameters                        |
+| output_format                 | The format of the output - json - cli - sarif                                                                                                                | No       |         | Input parameters                        |
+| output_file_path              | The path for the file output                                                                                                                                 | No       |         | Input parameters                        |
+| framework                     | run on a specific infrastructure                                                                                                                             | No       |         | cloudformation,terraform,kubernetes,all |
+| download_external_modules     | download external terraform modules from public git repositories and terraform registry                                                                      | No       |         | Input parameters                        |
+| repo_root_for_plan_enrichment | root directory containing the hcl templates used to generate the given terraform plan file. Use together with `file`                                         | No       |         | Input parameters                        |
+| log_level                     | set log level                                                                                                                                                | No       | WARNING | Input parameters                        |
 
 Full reference docs [here](https://docs.bridgecrew.io/docs/integrate-with-github-actions-v2).
 
