@@ -34,6 +34,7 @@ The community plan does not limit the number of scans or users you can invite to
          external_checks_dirs: ./checkov
          download_external_modules: true # optional: download external terraform modules from public git repositories and terraform registry
          log_level: DEBUG # optional: set log level. Default WARNING
+         use_enforcement_rules: true # optional - use enforcement rule configs from the platform
 
 ```
 
