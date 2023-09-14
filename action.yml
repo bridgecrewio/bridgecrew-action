@@ -124,7 +124,7 @@ branding:
 
 runs:
   using: 'docker'
-  image: 'docker://bridgecrew/bridgecrew:2.4.38'
+  image: 'docker://bridgecrew/bridgecrew:2.4.39'
   args:
     - ${{ inputs.file }}
     - ${{ inputs.directory }}
