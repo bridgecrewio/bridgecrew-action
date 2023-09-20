@@ -1,3 +1,5 @@
+# DEPRECATED: This project is no longer supported and will be archived end of 2023. Please use [checkov-action](https://github.com/bridgecrewio/checkov-action) instead.
+
 # Bridgecrew GitHub Action
 
 ## The Bridgecrew GitHub Action
